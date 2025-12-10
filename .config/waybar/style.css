@@ -1,0 +1,170 @@
+@import "/home/ash/.cache/wal/colors-waybar.css";
+
+@define-color pywal-module-bg alpha(mix(@color0, @color4, 0.45), 0.75);
+@define-color pywal-active-bg alpha(@color4, 0.9);
+@define-color pywal-active-fg alpha(@color0, 0.8);
+@define-color pywal-urgent-bg @color1;
+@define-color pywal-urgent-fg @color0;
+@define-color pywal-critical-color @color1;
+@define-color pywal-muted-color @color2;
+
+@define-color base00 #272e33;
+@define-color base01 #2e383c;
+@define-color base05 #d3c6aa;
+@define-color lavender @color4;
+
+/* تعريف ألوان الوحدات الجديدة */
+@define-color color-accent @color4; /* #DF9F3D */
+@define-color color-highlight @color1; /* #924A71 */
+@define-color color-subtle alpha(@color7, 0.4);
+
+
+* {
+    border: none;
+    min-height: 0;
+    font-family: "Adwaita sans","JetBrainsMono Nerd Font", sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: -0.5px;
+    padding: 0px;
+    margin: 0px;
+}
+
+window#waybar {
+    background: alpha(@color0, 0.95);
+    border-radius: 0px;
+    transition: background-color 0.20s ease;
+}
+
+tooltip {
+    background-color: @pywal-module-bg;
+    font-size: 12px;
+    color: white;
+    border-radius: 4px;
+}
+
+tooltip label {
+    padding: 5px;
+    margin: 0px;
+}
+
+#custom-cava,
+#language,
+#keyboard-state,
+#tray,
+#pulseaudio,
+#backlight {
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin: 2px;
+    background-color: transparent;
+    color: white;
+}
+
+#clock {
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin: 2px 2px 2px 8px; 
+    background-color: transparent;
+    color: #FFCDC9;
+}
+
+#custom-swaync {
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin: 2px 2px 2px 8px; 
+    background-color: transparent;
+    color: #DE1A58;
+}
+
+#window {
+    padding: 2px 10px;
+    margin: 2px;
+    background-color: transparent;
+    color: #FCF6D9;
+}
+
+
+/* Workspaces */
+#workspaces {
+    margin: 4px 6px;
+    padding: 2px 6px;
+    background-color: alpha(@color0, 0.40);
+    border-radius: 14px;
+    color: @color2;
+}
+
+#workspaces button {
+    box-shadow: none;
+    text-shadow: none;
+
+    padding: 3px 6px;
+    margin: 0 3px;
+    border-radius: 8px;
+    background-color: transparent;
+    color: @lavender;
+
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    background-color: @pywal-active-bg;
+    color: @pywal-active-fg;
+    min-width: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+    background-color: alpha(@lavender, 0.12);
+    color: @color4;
+    border-radius: 16px;
+    min-width: 50px; 
+    background-size: 400% 400%;
+}
+
+#workspaces button.urgent {
+    background-color: @pywal-urgent-bg;
+    color: @pywal-urgent-fg;
+    border-radius: 16px;
+    min-width: 50px;
+    background-size: 400% 400%;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Custom Modules */
+#custom-cava {
+    background-color: transparent;
+    color: #6AECE1;
+    padding-right: 0px;
+    padding-left: 6px;
+    min-width: 20px;
+}
+
+#pulseaudio {
+    background-color: transparent;
+    color: #FFF57E;
+}
+
+#backlight {
+    background-color: transparent;
+    color: #26CCC2;
+}
+
+#tray {
+    background-color: transparent;
+    color: @color5;
+}
+
+#hyprland-language {
+    background-color: transparent;
+    color: @color0;
+}
+
+#keyboard-state {
+    background-color: transparent;
+    color: @color0;
+}
+
+#pulseaudio.muted {
+    color: @pywal-muted-color;
+}
