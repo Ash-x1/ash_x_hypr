@@ -1,0 +1,23 @@
+@define-color background #19263a;
+@define-color foreground #c5c8cd;
+
+@define-color color0 #19263a;
+@define-color color1 #0966B9;
+@define-color color2 #0471CF;
+@define-color color3 #0D67E2;
+@define-color color4 #0B8FF0;
+@define-color color5 #29A5F6;
+@define-color color6 #5BA1E8;
+@define-color color7 #c5c8cd;
+@define-color color8 #67707f;
+
+@define-color gray @color8;
+@define-color red @color1;
+@define-color blue @color4;
+@define-color yellow @color3;
+@define-color green @color2;
+@define-color select @color6;
+
+
+@define-color mpris-album-art-overlay rgba(0, 0, 0, 0.55);
+@define-color mpris-button-hover rgba(0, 0, 0, 0.5);
