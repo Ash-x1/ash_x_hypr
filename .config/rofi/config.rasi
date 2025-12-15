@@ -14,7 +14,7 @@ configuration {
     display-window: "Windows";
     display-run: "Run";
     drun-display-format: "{icon} {name}";
-    font: "JetBrainsMono Nerd Font 13";
+    font: "FiraCode Nerd Font Medium 13";
     show-icons: true;
 }
 

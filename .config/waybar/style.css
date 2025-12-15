@@ -13,7 +13,6 @@
 @define-color base05 #d3c6aa;
 @define-color lavender @color4;
 
-/* تعريف ألوان الوحدات الجديدة */
 @define-color color-accent @color4; /* #DF9F3D */
 @define-color color-highlight @color1; /* #924A71 */
 @define-color color-subtle alpha(@color7, 0.4);
@@ -22,7 +21,7 @@
 * {
     border: none;
     min-height: 0;
-    font-family: "Adwaita sans","JetBrainsMono Nerd Font", sans-serif;
+    font-family: "Noto Sans", "Noto Sans CJK JP", "Noto Sans Arabic","JetBrainsMono Nerd Font", sans-serif;
     font-weight: 800;
     font-size: 13px;
     letter-spacing: -0.5px;
@@ -66,7 +65,7 @@ tooltip label {
     border-radius: 4px;
     margin: 2px 2px 2px 8px; 
     background-color: transparent;
-    color: #FFCDC9;
+    color: #F7B980;
 }
 
 #custom-swaync {

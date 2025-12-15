@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-emoji_file="$HOME/.config/rofi/rofi-scripts/emojis/all_emojis.txt"
+emoji_file="$HOME/.config/rofi/scripts/emojis/all_emojis.txt"
 
 chosen=$(cat "$emoji_file" | rofi -dmenu -i -p "Select Emoji")
 

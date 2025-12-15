@@ -16,8 +16,8 @@
 		"tray",
 		"hyprland/language",
 		"keyboard-state",
-		"pulseaudio",
-		"backlight",
+		//"pulseaudio",
+		//"backlight",
 		"clock",
 		"custom/swaync"
 	],
@@ -44,8 +44,8 @@
 			"7": "七",
 			"8": "八",
 			"9": "九",
-			"10": "十",
-			"active": "●"
+			"10": "十"
+			//"active": "●"
 		},
 		"sort-by-number": true,
 		"persistent-workspaces": {
@@ -59,7 +59,8 @@
 	"hyprland/window": {
 		  "format": "{}",
 		  "max-length": 30,
-		  "all-outputs": true,
+		  "tooltip": false,
+		  "all-outputs": true
 	},
 	
 	//modules-right
@@ -83,7 +84,7 @@
 		"unlocked": ""
 		}
 	},
-
+/*
 	"pulseaudio": {
 		"format": "{volume}% {icon} {format_source}",
 		"format-bluetooth": "{volume}% {icon} {format_source}",
@@ -109,6 +110,7 @@
 		"format-icons": ["", "", "", "", "", "", "", "", ""],
 		"tooltip":false
 	},
+*/
 	"clock": {
 		"format": "{:%I:%M %p}",
 		"format-alt": "{:%Y-%m-%d}",
