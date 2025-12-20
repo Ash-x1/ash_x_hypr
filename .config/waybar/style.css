@@ -30,7 +30,8 @@
 }
 
 window#waybar {
-    background: alpha(@color0, 0.95);
+    /*background: alpha(@color0, 0.95);*/ 
+    background: transparent;
     border-radius: 0px;
     transition: background-color 0.20s ease;
 }
@@ -62,25 +63,45 @@ tooltip label {
 
 #clock {
     padding: 2px 6px;
-    border-radius: 4px;
+    border-radius: 14px;
     margin: 2px 2px 2px 8px; 
-    background-color: transparent;
+    background-color: alpha(@color0, 1);
     color: #F7B980;
+    border: 2px solid transparent;
+    background: linear-gradient(alpha(@color0, 0.80), alpha(@color0, 0.80)) padding-box,
+                linear-gradient(45deg, @color1, #ff00ff) border-box;
+    background-clip: padding-box, border-box;
 }
 
 #custom-swaync {
-    padding: 2px 6px;
-    border-radius: 4px;
+    padding: 2px 10px;
+    border-radius: 14px;
     margin: 2px 2px 2px 8px; 
-    background-color: transparent;
+    background-color: alpha(@color0, 1);
     color: #DE1A58;
+    border: 2px solid transparent;
+    background: linear-gradient(alpha(@color0, 0.80), alpha(@color0, 0.80)) padding-box,
+                linear-gradient(45deg, @color1, #ff00ff) border-box;
+    background-clip: padding-box, border-box;
 }
 
+/*window*/
 #window {
     padding: 2px 10px;
     margin: 2px;
-    background-color: transparent;
+    border-radius: 14px;
     color: #FCF6D9;
+    border: 2px solid transparent;
+    background: linear-gradient(alpha(@color0, 0.80), alpha(@color0, 0.80)) padding-box,
+                linear-gradient(45deg, @color1, #ff00ff) border-box;
+    background-clip: padding-box, border-box;
+}
+
+window#waybar.empty #window {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
 }
 
 
@@ -88,16 +109,20 @@ tooltip label {
 #workspaces {
     margin: 4px 6px;
     padding: 2px 6px;
-    background-color: alpha(@color0, 0.40);
+    background-color: alpha(@color0, 1);
     border-radius: 14px;
     color: @color2;
+    border: 2px solid transparent;
+    background: linear-gradient(alpha(@color0, 0.80), alpha(@color0, 0.80)) padding-box,
+                linear-gradient(45deg, @color1, #ff00ff) border-box;
+    background-clip: padding-box, border-box;
 }
 
 #workspaces button {
     box-shadow: none;
     text-shadow: none;
 
-    padding: 3px 6px;
+    padding: 3px 4px;
     margin: 0 3px;
     border-radius: 8px;
     background-color: transparent;
@@ -132,11 +157,16 @@ tooltip label {
 
 /* Custom Modules */
 #custom-cava {
-    background-color: transparent;
+    background-color: alpha(@color0, 1);
     color: #6AECE1;
-    padding-right: 0px;
+    border-radius: 14px;
+    padding-right: 6px;
     padding-left: 6px;
     min-width: 20px;
+    border: 2px solid transparent;
+    background: linear-gradient(alpha(@color0, 0.80), alpha(@color0, 0.80)) padding-box,
+                linear-gradient(45deg, @color1, #ff00ff) border-box;
+    background-clip: padding-box, border-box;
 }
 
 #pulseaudio {
@@ -150,17 +180,34 @@ tooltip label {
 }
 
 #tray {
-    background-color: transparent;
+    background-color: alpha(@color0, 0.80);
+    border-radius: 14px;
+    margin: 4px 6px;
+    padding: 3px 6px;
     color: @color5;
+    border: 2px solid transparent;
+    background: linear-gradient(alpha(@color0, 0.80), alpha(@color0, 0.80)) padding-box,
+                linear-gradient(45deg, @color1, #ff00ff) border-box;
+    background-clip: padding-box, border-box;
 }
 
-#hyprland-language {
-    background-color: transparent;
-    color: @color0;
+#language {
+    background-color: alpha(@color0, 1);
+    border-radius: 14px;
+    margin: 4px 6px;
+    padding: 6px 8px;
+    color: #4B9DA9;
+    border: 2px solid transparent;
+    background: linear-gradient(alpha(@color0, 0.80), alpha(@color0, 0.80)) padding-box,
+                linear-gradient(45deg, @color1, #ff00ff) border-box;
+    background-clip: padding-box, border-box;
 }
 
 #keyboard-state {
-    background-color: transparent;
+    background-color: alpha(@color0, 0.80);
+    border-radius: 14px;
+    margin: 4px 6px;
+    padding: 6px 8px;
     color: @color0;
 }
 
