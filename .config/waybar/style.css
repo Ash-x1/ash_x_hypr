@@ -69,7 +69,7 @@ tooltip label {
     color: #F7B980;
     border: 2px solid transparent;
     background: linear-gradient(alpha(@color0, 0.80), alpha(@color0, 0.80)) padding-box,
-                linear-gradient(45deg, @color1, #ff00ff) border-box;
+                linear-gradient(45deg, @color7, @color0) border-box;
     background-clip: padding-box, border-box;
 }
 
@@ -81,7 +81,7 @@ tooltip label {
     color: #DE1A58;
     border: 2px solid transparent;
     background: linear-gradient(alpha(@color0, 0.80), alpha(@color0, 0.80)) padding-box,
-                linear-gradient(45deg, @color1, #ff00ff) border-box;
+                linear-gradient(45deg, @color7, @color0) border-box;
     background-clip: padding-box, border-box;
 }
 
@@ -93,7 +93,7 @@ tooltip label {
     color: #FCF6D9;
     border: 2px solid transparent;
     background: linear-gradient(alpha(@color0, 0.80), alpha(@color0, 0.80)) padding-box,
-                linear-gradient(45deg, @color1, #ff00ff) border-box;
+                linear-gradient(45deg, @color7, @color0) border-box;
     background-clip: padding-box, border-box;
 }
 
@@ -114,7 +114,7 @@ window#waybar.empty #window {
     color: @color2;
     border: 2px solid transparent;
     background: linear-gradient(alpha(@color0, 0.80), alpha(@color0, 0.80)) padding-box,
-                linear-gradient(45deg, @color1, #ff00ff) border-box;
+                linear-gradient(45deg, @color7, @color0) border-box;
     background-clip: padding-box, border-box;
 }
 
@@ -165,7 +165,7 @@ window#waybar.empty #window {
     min-width: 20px;
     border: 2px solid transparent;
     background: linear-gradient(alpha(@color0, 0.80), alpha(@color0, 0.80)) padding-box,
-                linear-gradient(45deg, @color1, #ff00ff) border-box;
+                linear-gradient(45deg, @color7, @color0) border-box;
     background-clip: padding-box, border-box;
 }
 
@@ -187,7 +187,7 @@ window#waybar.empty #window {
     color: @color5;
     border: 2px solid transparent;
     background: linear-gradient(alpha(@color0, 0.80), alpha(@color0, 0.80)) padding-box,
-                linear-gradient(45deg, @color1, #ff00ff) border-box;
+                linear-gradient(45deg, @color7, @color0) border-box;
     background-clip: padding-box, border-box;
 }
 
@@ -199,7 +199,7 @@ window#waybar.empty #window {
     color: #4B9DA9;
     border: 2px solid transparent;
     background: linear-gradient(alpha(@color0, 0.80), alpha(@color0, 0.80)) padding-box,
-                linear-gradient(45deg, @color1, #ff00ff) border-box;
+                linear-gradient(45deg, @color7, @color0) border-box;
     background-clip: padding-box, border-box;
 }
 
