@@ -1,8 +1,0 @@
-@import '../../.cache/wal/colors-waybar.css';
-@import 'themes/nova-dark/notifications.css';
-@import 'themes/nova-dark/central_control.css';
-
-*{
-	font-family: "JetBrainsMono Nerd Font";
-	font-size: 14;
-}
