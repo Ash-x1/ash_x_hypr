@@ -13,10 +13,9 @@
 @define-color base05 #d3c6aa;
 @define-color lavender @color4;
 
-@define-color color-accent @color4; /* #DF9F3D */
-@define-color color-highlight @color1; /* #924A71 */
+@define-color color-accent @color4; 
+@define-color color-highlight @color1; 
 @define-color color-subtle alpha(@color7, 0.4);
-
 
 * {
     border: none;
@@ -30,7 +29,6 @@
 }
 
 window#waybar {
-    /*background: alpha(@color0, 0.95);*/ 
     background: transparent;
     border-radius: 0px;
     transition: background-color 0.20s ease;
@@ -53,7 +51,8 @@ tooltip label {
 #keyboard-state,
 #tray,
 #pulseaudio,
-#backlight {
+#backlight,
+#battery {
     padding: 2px 6px;
     border-radius: 4px;
     margin: 2px;
@@ -85,7 +84,30 @@ tooltip label {
     background-clip: padding-box, border-box;
 }
 
-/*window*/
+#battery {
+    padding: 2px 10px;
+    border-radius: 14px;
+    margin: 2px 2px 2px 8px; 
+    background-color: alpha(@color0, 1);
+    color: #F9F8F6;
+    border: 2px solid transparent;
+    background: linear-gradient(alpha(@color0, 0.80), alpha(@color0, 0.80)) padding-box,
+                linear-gradient(45deg, @color7, @color0) border-box;
+    background-clip: padding-box, border-box;
+}
+
+#battery.charging {
+    color: @color2;
+}
+
+#battery.warning:not(.charging) {
+    color: @color3;
+}
+
+#battery.critical:not(.charging) {
+    color: @color1;
+}
+
 #window {
     padding: 2px 10px;
     margin: 2px;
@@ -104,8 +126,6 @@ window#waybar.empty #window {
     margin: 0;
 }
 
-
-/* Workspaces */
 #workspaces {
     margin: 4px 6px;
     padding: 2px 6px;
@@ -121,13 +141,11 @@ window#waybar.empty #window {
 #workspaces button {
     box-shadow: none;
     text-shadow: none;
-
     padding: 3px 4px;
     margin: 0 3px;
     border-radius: 8px;
     background-color: transparent;
     color: @lavender;
-
     transition: all 0.3s ease-in-out;
 }
 
@@ -143,7 +161,6 @@ window#waybar.empty #window {
     color: @color4;
     border-radius: 16px;
     min-width: 50px; 
-    background-size: 400% 400%;
 }
 
 #workspaces button.urgent {
@@ -151,11 +168,9 @@ window#waybar.empty #window {
     color: @pywal-urgent-fg;
     border-radius: 16px;
     min-width: 50px;
-    background-size: 400% 400%;
     transition: all 0.3s ease-in-out;
 }
 
-/* Custom Modules */
 #custom-cava {
     background-color: alpha(@color0, 1);
     color: #F9F8F6;
@@ -167,16 +182,6 @@ window#waybar.empty #window {
     background: linear-gradient(alpha(@color0, 0.80), alpha(@color0, 0.80)) padding-box,
                 linear-gradient(45deg, @color7, @color0) border-box;
     background-clip: padding-box, border-box;
-}
-
-#pulseaudio {
-    background-color: transparent;
-    color: #FFF57E;
-}
-
-#backlight {
-    background-color: transparent;
-    color: #26CCC2;
 }
 
 #tray {
@@ -209,8 +214,4 @@ window#waybar.empty #window {
     margin: 4px 6px;
     padding: 6px 8px;
     color: @color0;
-}
-
-#pulseaudio.muted {
-    color: @pywal-muted-color;
 }

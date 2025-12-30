@@ -1,6 +1,7 @@
 @import url("./colors/colors.css");
 
 * {
+    all: unset;
     outline: none;
     font-family: "FiraCode Nerd Font";
     font-size: 18px;

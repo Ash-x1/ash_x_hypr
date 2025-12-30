@@ -3,7 +3,7 @@
     "positionX": "right",
     "positionY": "top",
     "cssPriority": "user",
-    
+    "use-gtk-theme": false,
     "layer": "overlay",
     "control-center-layer": "top",
     "layer-shell": true,
