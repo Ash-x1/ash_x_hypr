@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Music direc
-music_dir="$HOME/Music/My-Playlist"
+music_dir="$HOME/Music/Personal"
 
 #supported files type
 mapfile -t music_paths < <(find "$music_dir" -type f \( -iname "*.mp3" -o -iname "*.m4a" -o -iname "*.mp4" -o -iname "*.opus" \))

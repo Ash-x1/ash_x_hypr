@@ -1,21 +1,8 @@
 @import "/home/ash/.cache/wal/colors-waybar.css";
 
-@define-color pywal-module-bg alpha(mix(@color0, @color4, 0.45), 0.75);
-@define-color pywal-active-bg alpha(@color4, 0.9);
-@define-color pywal-active-fg alpha(@color0, 0.8);
-@define-color pywal-urgent-bg @color1;
-@define-color pywal-urgent-fg @color0;
-@define-color pywal-critical-color @color1;
-@define-color pywal-muted-color @color2;
-
-@define-color base00 #272e33;
-@define-color base01 #2e383c;
-@define-color base05 #d3c6aa;
-@define-color lavender @color4;
-
-@define-color color-accent @color4; 
-@define-color color-highlight @color1; 
-@define-color color-subtle alpha(@color7, 0.4);
+@define-color pywal-module-bg alpha(@color0, 0.7);
+@define-color pywal-border alpha(@color4, 0.8);
+@define-color pywal-text @color7;
 
 * {
     border: none;
@@ -30,70 +17,75 @@
 
 window#waybar {
     background: transparent;
-    border-radius: 0px;
-    transition: background-color 0.20s ease;
 }
 
 tooltip {
-    background-color: @pywal-module-bg;
-    font-size: 12px;
-    color: white;
-    border-radius: 4px;
+    background-color: @color0;
+    color: @color7;
+    border: 2px solid @color4;
+    border-radius: 8px;
 }
 
-tooltip label {
-    padding: 5px;
-    margin: 0px;
-}
-
+#clock,
+#custom-swaync,
+#battery,
+#window,
+#workspaces,
 #custom-cava,
-#language,
-#keyboard-state,
 #tray,
-#pulseaudio,
-#backlight,
-#battery {
-    padding: 2px 6px;
-    border-radius: 4px;
-    margin: 2px;
-    background-color: transparent;
-    color: white;
+#language {
+    padding: 2px 10px;
+    border-radius: 14px;
+    margin: 4px 3px;
+    background-color: @pywal-module-bg;
+    color: @color7;
+    border: 2px solid @pywal-border;
+    transition: all 0.3s ease;
 }
 
-#clock {
-    padding: 2px 6px;
-    border-radius: 14px;
-    margin: 2px 2px 2px 8px; 
-    background-color: alpha(@color0, 1);
-    color: #F9F8F6;
-    border: 2px solid transparent;
-    background: linear-gradient(alpha(@color0, 0.80), alpha(@color0, 0.80)) padding-box,
-                linear-gradient(45deg, @color7, @color0) border-box;
-    background-clip: padding-box, border-box;
+window#waybar.empty #window {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+#workspaces button {
+    box-shadow: none;
+    text-shadow: none;
+    padding: 3px 4px;
+    margin: 0 3px;
+    border-radius: 8px;
+    background-color: transparent;
+    color: @color4;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    background-color: @color4;
+    color: @color0;
+    min-width: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+    background-color: alpha(@color4, 0.12);
+    color: @color4;
+    border-radius: 16px;
+    min-width: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.urgent {
+    background-color: @color1;
+    color: @color0;
+    border-radius: 16px;
+    min-width: 50px;
+    transition: all 0.3s ease-in-out;
 }
 
 #custom-swaync {
-    padding: 2px 10px;
-    border-radius: 14px;
-    margin: 2px 2px 2px 8px; 
-    background-color: alpha(@color0, 1);
-    color: #DE1A58;
-    border: 2px solid transparent;
-    background: linear-gradient(alpha(@color0, 0.80), alpha(@color0, 0.80)) padding-box,
-                linear-gradient(45deg, @color7, @color0) border-box;
-    background-clip: padding-box, border-box;
-}
-
-#battery {
-    padding: 2px 10px;
-    border-radius: 14px;
-    margin: 2px 2px 2px 8px; 
-    background-color: alpha(@color0, 1);
-    color: #F9F8F6;
-    border: 2px solid transparent;
-    background: linear-gradient(alpha(@color0, 0.80), alpha(@color0, 0.80)) padding-box,
-                linear-gradient(45deg, @color7, @color0) border-box;
-    background-clip: padding-box, border-box;
+    color: @color1;
 }
 
 #battery.charging {
@@ -106,112 +98,24 @@ tooltip label {
 
 #battery.critical:not(.charging) {
     color: @color1;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
-#window {
-    padding: 2px 10px;
-    margin: 2px;
-    border-radius: 14px;
-    color: #F9F8F6;
-    border: 2px solid transparent;
-    background: linear-gradient(alpha(@color0, 0.80), alpha(@color0, 0.80)) padding-box,
-                linear-gradient(45deg, @color7, @color0) border-box;
-    background-clip: padding-box, border-box;
-}
-
-window#waybar.empty #window {
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-}
-
-#workspaces {
-    margin: 4px 6px;
-    padding: 2px 6px;
-    background-color: alpha(@color0, 1);
-    border-radius: 14px;
-    color: @color2;
-    border: 2px solid transparent;
-    background: linear-gradient(alpha(@color0, 0.80), alpha(@color0, 0.80)) padding-box,
-                linear-gradient(45deg, @color7, @color0) border-box;
-    background-clip: padding-box, border-box;
-}
-
-#workspaces button {
-    box-shadow: none;
-    text-shadow: none;
-    padding: 3px 4px;
-    margin: 0 3px;
-    border-radius: 8px;
-    background-color: transparent;
-    color: @lavender;
-    transition: all 0.3s ease-in-out;
-}
-
-#workspaces button.active {
-    background-color: @pywal-active-bg;
-    color: @pywal-active-fg;
-    min-width: 50px;
-    transition: all 0.3s ease-in-out;
-}
-
-#workspaces button:hover {
-    background-color: alpha(@lavender, 0.12);
-    color: @color4;
-    border-radius: 16px;
-    min-width: 50px; 
-}
-
-#workspaces button.urgent {
-    background-color: @pywal-urgent-bg;
-    color: @pywal-urgent-fg;
-    border-radius: 16px;
-    min-width: 50px;
-    transition: all 0.3s ease-in-out;
+@keyframes blink {
+    to {
+        background-color: @color1;
+        color: @color0;
+    }
 }
 
 #custom-cava {
-    background-color: alpha(@color0, 1);
-    color: #F9F8F6;
-    border-radius: 14px;
-    padding-right: 6px;
-    padding-left: 6px;
-    min-width: 20px;
-    border: 2px solid transparent;
-    background: linear-gradient(alpha(@color0, 0.80), alpha(@color0, 0.80)) padding-box,
-                linear-gradient(45deg, @color7, @color0) border-box;
-    background-clip: padding-box, border-box;
-}
-
-#tray {
-    background-color: alpha(@color0, 0.80);
-    border-radius: 14px;
-    margin: 4px 6px;
-    padding: 3px 6px;
     color: @color5;
-    border: 2px solid transparent;
-    background: linear-gradient(alpha(@color0, 0.80), alpha(@color0, 0.80)) padding-box,
-                linear-gradient(45deg, @color7, @color0) border-box;
-    background-clip: padding-box, border-box;
 }
 
-#language {
-    background-color: alpha(@color0, 1);
-    border-radius: 14px;
-    margin: 4px 6px;
-    padding: 6px 8px;
-    color: #F9F8F6;
-    border: 2px solid transparent;
-    background: linear-gradient(alpha(@color0, 0.80), alpha(@color0, 0.80)) padding-box,
-                linear-gradient(45deg, @color7, @color0) border-box;
-    background-clip: padding-box, border-box;
-}
-
-#keyboard-state {
-    background-color: alpha(@color0, 0.80);
-    border-radius: 14px;
-    margin: 4px 6px;
-    padding: 6px 8px;
-    color: @color0;
+#window {
+    color: @color6;
 }

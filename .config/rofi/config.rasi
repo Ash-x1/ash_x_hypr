@@ -3,8 +3,8 @@
 * {
     background-alt: @background;
     color1: @selected-normal-background;
-    color4: @urgent-background;
-    color5: @active-background;
+    color4: @selected-normal-background;
+    color5: @selected-normal-background;
     color9: @urgent-background;
 }
 
