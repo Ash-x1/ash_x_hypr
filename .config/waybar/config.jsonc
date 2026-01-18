@@ -5,6 +5,7 @@
   "modules-right": [
     "tray",
     "pulseaudio",
+    "backlight",
     "hyprland/language",
     "keyboard-state",
     "battery",
@@ -69,6 +70,15 @@
     "tooltip": false,
   },
 
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon}  {percent}%",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "on-scroll-up": "brightnessctl set 1%+",
+    "on-scroll-down": "brightnessctl set 1%-",
+    "min-length": 6,
+  },
+
   "tray": {
     "icon-size": 15,
     "spacing": 5,
@@ -76,7 +86,7 @@
   },
 
   "hyprland/language": {
-    "format": "󰌌 {short}",
+    "format": "󰌌  {short}",
     "tooltip-format": "Language: {long}",
   },
 
@@ -94,10 +104,10 @@
       "warning": 30,
       "critical": 15,
     },
-    "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
-    "format-alt": "{icon} {time}",
+    "format": "{icon}   {capacity}%",
+    "format-charging": "   {capacity}%",
+    "format-plugged": "   {capacity}%",
+    "format-alt": "{icon}   {time}",
     "format-icons": ["", "", "", "", ""],
     "tooltip": false,
   },
