@@ -6,21 +6,21 @@
 
 * {
     border: none;
-    min-height: 0;
-    font-family: "Noto Sans", "Noto Sans CJK JP", "Noto Sans Arabic","JetBrainsMono Nerd Font", sans-serif;
+    border-radius: 0;
+    font-family: "Noto Sans Arabic", "Noto Sans", "Noto Sans CJK JP", "JetBrainsMono Nerd Font", sans-serif;
     font-weight: 800;
     font-size: 13px;
     letter-spacing: -0.5px;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
 }
 
 window#waybar {
-    background: transparent;
+    background-color: transparent;
 }
 
 tooltip {
-    background-color: @color0;
+    background: @color0;
     color: @color7;
     border: 2px solid @color4;
     border-radius: 8px;
@@ -33,55 +33,49 @@ tooltip {
 #workspaces,
 #custom-cava,
 #tray,
-#language {
+#language,
+#pulseaudio {
     padding: 2px 10px;
     border-radius: 14px;
     margin: 4px 3px;
     background-color: @pywal-module-bg;
     color: @color7;
     border: 2px solid @pywal-border;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(.55,-0.04,.3,1.44);
 }
 
 window#waybar.empty #window {
     background-color: transparent;
     border: none;
     margin: 0;
-    padding: 0;
 }
 
 #workspaces button {
     box-shadow: none;
     text-shadow: none;
-    padding: 3px 4px;
+    padding: 0px 5px;
     margin: 0 3px;
     border-radius: 8px;
     background-color: transparent;
     color: @color4;
-    transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
     background-color: @color4;
     color: @color0;
-    min-width: 50px;
-    transition: all 0.3s ease-in-out;
+    min-width: 40px;
 }
 
 #workspaces button:hover {
-    background-color: alpha(@color4, 0.12);
+    background-color: alpha(@color4, 0.2);
     color: @color4;
-    border-radius: 16px;
-    min-width: 50px;
-    transition: all 0.3s ease-in-out;
+    border-radius: 12px;
 }
 
 #workspaces button.urgent {
     background-color: @color1;
     color: @color0;
-    border-radius: 16px;
-    min-width: 50px;
-    transition: all 0.3s ease-in-out;
+    border-radius: 12px;
 }
 
 #custom-swaync {
@@ -112,10 +106,18 @@ window#waybar.empty #window {
     }
 }
 
-#custom-cava {
+#custom-cava, #pulseaudio {
     color: @color5;
 }
 
 #window {
     color: @color6;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding-left: 12px;
+    padding-right: 12px;
+    min-height: 24px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    transition: none;
 }
