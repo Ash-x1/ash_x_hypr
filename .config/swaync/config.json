@@ -3,13 +3,13 @@
     "positionX": "right",
     "positionY": "top",
     "cssPriority": "user",
-    "use-gtk-theme": false,
+    
     "layer": "overlay",
     "control-center-layer": "top",
     "layer-shell": true,
 
     "control-center-width": 400,
-    "control-center-height": 700,
+    "control-center-height": 850,
     "control-center-margin-top": 10,
     "control-center-margin-bottom": 10,
     "control-center-margin-right": 10,
@@ -81,13 +81,14 @@
                     "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'",
                     "update-command": "sh -c '[[ $(nmcli r wifi) == \"enabled\" ]] && echo true || echo false'"
                 },
-                
-{
-    "label": "󰂯",
-    "command": "blueman-manager"
-},
-
-		{
+                {
+                    "label": "󰂯",
+                    "type": "toggle",
+                    "active": true,
+                    "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && rfkill unblock bluetooth || rfkill block bluetooth'",
+                    "update-command": "sh -c \"rfkill list bluetooth | grep -q \"Soft blocked: no\" && echo true || echo false\""
+                },
+                {
                     "label": " ",
                     "type": "toggle",
                     "active": false,

@@ -1,9 +1,8 @@
 @import url("./colors/colors.css");
 
 * {
-    all: unset;
     outline: none;
-    font-family: "FiraCode Nerd Font";
+    font-family: "Segoe UI Variable Static Text";
     font-size: 18px;
     text-shadow: none;
     color: @foreground;

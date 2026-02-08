@@ -1,23 +1,12 @@
-@define-color background #19263a;
-@define-color foreground #c5c8cd;
+@define-color background #1e1e2e;
+@define-color foreground #cdd6f4;
+@define-color select     #585b70;
 
-@define-color color0 #19263a;
-@define-color color1 #0966B9;
-@define-color color2 #0471CF;
-@define-color color3 #0D67E2;
-@define-color color4 #0B8FF0;
-@define-color color5 #29A5F6;
-@define-color color6 #5BA1E8;
-@define-color color7 #c5c8cd;
-@define-color color8 #67707f;
-
-@define-color gray @color8;
-@define-color red @color1;
-@define-color blue @color4;
-@define-color yellow @color3;
-@define-color green @color2;
-@define-color select @color6;
-
-
-@define-color mpris-album-art-overlay rgba(0, 0, 0, 0.55);
-@define-color mpris-button-hover rgba(0, 0, 0, 0.5);
+@define-color pink       #f5c2e7;
+@define-color purple     #cba6f7;
+@define-color red        #f38ba8;
+@define-color orange     #fab387;
+@define-color yellow     #f9e2af;
+@define-color green      #a6e3a1;
+@define-color blue       #89b4fa;
+@define-color gray       #45475a;

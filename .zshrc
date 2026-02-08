@@ -50,7 +50,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -81,6 +81,14 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
+#-----------------------------------
+# zsh-completions
+fpath=(/usr/share/zsh/site-functions $fpath)
+
+autoload -Uz compinit
+compinit
+#-----------------------------------
+#
 source $ZSH/oh-my-zsh.sh
 
 # eval "$(zoxide init zsh)"
@@ -102,15 +110,49 @@ alias lla="eza -lha --icons"
 
 alias lt="eza --tree --icons"
 
+# grc
+# -------- grc (Generic Colouriser) --------
+if command -v grc >/dev/null 2>&1; then
+  alias ping='grc ping'
+  alias traceroute='grc traceroute'
+  alias ip='grc ip'
+  alias ss='grc ss'
+  alias ps='grc ps'
+  alias mount='grc mount'
+  alias df='grc df'
+  alias du='grc du'
+  alias env='grc env'
+  alias journalctl='grc journalctl'
+fi
+# -----------------------------------------
+export GRC_COLORS=true
+
+
 # yazi 
 alias y="yazi"
 
 # neovim
 alias nv="nvim"
 
+# pacman install 
+alias i="sudo pacman -S"
+
+# pacman remove 
+alias r="sudo pacman -R"
+
+# pacman update 
+alias u="sudo pacman -Syu"
+
+# pacman search locally
+alias ss="pacman -Qs"
+
+# pacman search globally
+alias s="pacman -Ss"
+
 # default editor 
-export EDITOR="neovim"
-export VISUAL="neovim"
+export EDITOR="nvim"
+export VISUAL="nvim"
+
 
 # User configuration
 
@@ -143,11 +185,4 @@ export VISUAL="neovim"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init - zsh)"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export PATH="$HOME/.local/bin:$PATH"
+export PATH=$HOME/.local/bin:$PATH
