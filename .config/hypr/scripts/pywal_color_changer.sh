@@ -21,3 +21,14 @@ hyprctl reload
 # generate rofi colors
 "$HOME/.config/rofi/scripts/wal-rofi-gen.sh"
 
+
+# reload swaync 
+"$HOME/.config/hypr/scripts/swaync_reload.sh"
+
+# WALL="$1"
+
+# swww img "$WALL"
+
+# matugen image "$WALL"
+
+

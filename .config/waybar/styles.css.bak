@@ -1,0 +1,142 @@
+@import "matugen-colors.css";
+
+/* ===== Matugen Color Mapping ===== */
+
+@define-color bg @surface;
+@define-color module-bg alpha(@surface, 0.7);
+@define-color border alpha(@primary, 0.8);
+@define-color text @on_surface;
+
+@define-color accent @primary;
+@define-color error @error;
+@define-color success @secondary;
+@define-color warning @tertiary;
+
+* {
+    border: none;
+    min-height: 0;
+    font-family:
+        "SF Pro Text", "Noto Sans Arabic", "Noto Sans", "Noto Sans CJK JP",
+        "JetBrainsMono Nerd Font", sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: -0.5px;
+    padding: 0px;
+    margin: 0px;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+tooltip {
+    background-color: @bg;
+    color: @text;
+    border: 2px solid @accent;
+    border-radius: 8px;
+}
+
+#clock,
+#custom-swaync,
+#battery,
+#window,
+#workspaces,
+#custom-cava,
+#tray,
+#language,
+#pulseaudio,
+#backlight {
+    padding: 2px 10px;
+    border-radius: 14px;
+    margin: 4px 3px;
+    background-color: @module-bg;
+    color: @text;
+    border: 2px solid @border;
+    transition: all 0.3s ease;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+#workspaces button {
+    box-shadow: none;
+    text-shadow: none;
+    padding: 3px 4px;
+    margin: 0 3px;
+    border-radius: 8px;
+    background-color: transparent;
+    color: @accent;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    background-color: @accent;
+    color: @bg;
+    min-width: 50px;
+}
+
+#workspaces button:hover {
+    background-color: alpha(@accent, 0.12);
+    color: @accent;
+    border-radius: 16px;
+    min-width: 50px;
+}
+
+#workspaces button.urgent {
+    background-color: @error;
+    color: @bg;
+    border-radius: 16px;
+    min-width: 50px;
+}
+
+#custom-swaync {
+    color: @error;
+}
+
+#battery.charging {
+    color: @success;
+}
+
+#battery.warning:not(.charging) {
+    color: @warning;
+}
+
+#battery.critical:not(.charging) {
+    color: @error;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: @error;
+        color: @bg;
+    }
+}
+
+#custom-cava,
+#pulseaudio {
+    color: @tertiary;
+}
+
+#window {
+    color: @primary;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    min-height: 24px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    transition: none;
+}
+
+#backlight {
+    color: @warning;
+}
+

@@ -1,0 +1,62 @@
+#!/bin/bash
+
+# =======================================================
+# User configuration
+# =======================================================
+WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
+UPDATE_ROFI_SCRIPT="$HOME/.config/rofi/scripts/update-rofi-wall.sh"
+
+# =======================================================
+# Check if directory exists
+# =======================================================
+if [ ! -d "$WALLPAPER_DIR" ]; then
+    echo "Directory $WALLPAPER_DIR does not exist."
+    exit 1
+fi
+
+# =======================================================
+# Prepare wallpaper choices with icons for rofi preview
+# =======================================================
+choices=""
+for img in "$WALLPAPER_DIR"/*.{jpg,png,gif}; do
+    [ -f "$img" ] || continue
+    filename=$(basename "$img")
+    choices+="$filename\0icon\x1f$img\n"
+done
+
+chosen=$(echo -en "$choices" | rofi -dmenu -p "Wallpaper" -theme-str 'element-icon { size: 80px; }')
+
+# =======================================================
+# If wallpaper selected
+# =======================================================
+if [ -n "$chosen" ]; then
+    selected_wallpaper="$WALLPAPER_DIR/$chosen"
+
+    # 1️⃣ Change wallpaper with swww
+    swww img "$selected_wallpaper" \
+        --transition-type random \
+        --transition-duration 3 \
+        --transition-fps 60
+
+    # 2️⃣ Generate Matugen colors + apply templates
+    matugen image "$selected_wallpaper"
+
+    # (لا حاجة لإعادة تحميل البرامج هنا إذا كان لديك post_hook في config.toml)
+
+    # 3️⃣ Save wallpaper path
+    echo "$selected_wallpaper" > ~/.cache/last_wallpaper
+
+    # 4️⃣ Update rofi imagebox symlink (كما كان سابقًا)
+    ln -sf "$selected_wallpaper" "$HOME/.config/rofi/current_rofi_wall/current_rofi_wallpaper"
+
+    # 5️⃣ Update rofi thumbnail if script exists
+    if [ -x "$UPDATE_ROFI_SCRIPT" ]; then
+        "$UPDATE_ROFI_SCRIPT"
+    else
+        echo "Warning: $UPDATE_ROFI_SCRIPT not found or not executable."
+    fi
+
+    # 6️⃣ Optional notification
+    notify-send "🎨 Wallpaper & Matugen theme updated!"
+fi
+

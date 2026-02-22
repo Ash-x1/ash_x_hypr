@@ -1,16 +1,16 @@
 {
   "spacing": 2,
-  "modules-left": ["custom/cava", "hyprland/workspaces"],
-  "modules-center": ["hyprland/window"],
+  "modules-left": ["custom/cava", "hyprland/window"/*"hyprland/workspaces"*/],
+  "modules-center": [/*"hyprland/window"*/ "clock", "custom/swaync", "hyprland/workspaces"],
   "modules-right": [
     "tray",
     "pulseaudio",
     "backlight",
     "hyprland/language",
     "keyboard-state",
-    "battery",
-    "clock",
-    "custom/swaync",
+    "battery"
+    //"clock",
+    //"custom/swaync",
   ],
 
   "custom/cava": {

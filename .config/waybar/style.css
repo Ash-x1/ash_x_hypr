@@ -1,103 +1,96 @@
 @import "/home/ash/.cache/wal/colors-waybar.css";
 
-@define-color pywal-module-bg alpha(@color0, 0.7);
-@define-color pywal-border alpha(@color4, 0.8);
-@define-color pywal-text @color7;
-
 * {
     border: none;
-    min-height: 0;
+    border-radius: 0;
     font-family:
-        "SF Pro Text", "Noto Sans Arabic", "Noto Sans", "Noto Sans CJK JP",
+        "SF Pro Text", /*"Noto Sans Arabic"*/ "Noto Sans", "Noto Sans CJK JP",
         "JetBrainsMono Nerd Font", sans-serif;
-    font-weight: 800;
-    font-size: 13px;
-    letter-spacing: -0.5px;
-    padding: 0px;
-    margin: 0px;
-}
-
-window#waybar {
-    background: transparent;
-}
-
-tooltip {
-    background-color: @color0;
-    color: @color7;
-    border: 2px solid @color4;
-    border-radius: 8px;
-}
-
-#clock,
-#custom-swaync,
-#battery,
-#window,
-#workspaces,
-#custom-cava,
-#tray,
-#language,
-#pulseaudio,
-#backlight {
-    padding: 2px 10px;
-    border-radius: 14px;
-    margin: 4px 3px;
-    background-color: @pywal-module-bg;
-    color: @color7;
-    border: 2px solid @pywal-border;
-    transition: all 0.3s ease;
-}
-
-window#waybar.empty #window {
-    background-color: transparent;
-    border: none;
+    font-weight: bold;
+    font-size: 14px;
     margin: 0;
     padding: 0;
 }
 
+window#waybar {
+    background-color: @color0;
+    color: @foreground;
+    transition-property: background-color;
+    transition-duration: 0.1s;
+    border-bottom: 2px solid @color1;
+}
+
+#window {
+    color: @color7;
+    margin: 4px 8px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    min-height: 24px;
+}
+
+button {
+    box-shadow: inset 0 -3px transparent;
+}
+
+button:hover {
+    background: inherit;
+    color: @color6;
+    border-top: 2px solid @color6;
+}
+
 #workspaces button {
-    box-shadow: none;
-    text-shadow: none;
-    padding: 3px 4px;
-    margin: 0 3px;
-    border-radius: 8px;
-    background-color: transparent;
+    padding: 0 10px;
     color: @color4;
-    transition: all 0.3s ease-in-out;
+    min-height: 24px;
 }
 
 #workspaces button.active {
-    background-color: @color4;
-    color: @color0;
-    min-width: 50px;
-    transition: all 0.3s ease-in-out;
-}
-
-#workspaces button:hover {
-    background-color: alpha(@color4, 0.12);
-    color: @color4;
-    border-radius: 16px;
-    min-width: 50px;
-    transition: all 0.3s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: @color5;
+    border-top: 2px solid @color5;
 }
 
 #workspaces button.urgent {
     background-color: @color1;
-    color: @color0;
-    border-radius: 16px;
-    min-width: 50px;
-    transition: all 0.3s ease-in-out;
+    color: @foreground;
 }
 
+#pulseaudio,
+#clock,
+#battery,
+#backlight,
+#tray,
+#language,
+#keyboard-state,
+#custom-cava,
 #custom-swaync {
-    color: @color1;
+    margin: 4px 6px;
+    padding: 0 8px;
+    min-height: 24px;
 }
 
-#battery.charging {
-    color: @color2;
-}
-
-#battery.warning:not(.charging) {
+#clock {
     color: @color3;
+    border-bottom: 2px solid @color3;
+}
+
+#pulseaudio {
+    color: @color2;
+    border-bottom: 2px solid @color2;
+}
+
+#backlight {
+    color: @color4;
+    border-bottom: 2px solid @color4;
+}
+
+#battery {
+    color: @color2;
+    border-bottom: 2px solid @color2;
+}
+
+#battery.warning {
+    color: @color1;
 }
 
 #battery.critical:not(.charging) {
@@ -109,31 +102,28 @@ window#waybar.empty #window {
     animation-direction: alternate;
 }
 
-@keyframes blink {
-    to {
-        background-color: @color1;
-        color: @color0;
-    }
+#language {
+    color: @color5;
+    border-bottom: 2px solid @color5;
 }
 
 #custom-cava {
-    color: @color5;
-}
-
-#pulseaudio {
-    color: @color5;
-}
-
-#window {
     color: @color6;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    min-height: 24px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    transition: none;
+    border-bottom: 2px solid @color6;
 }
 
-#backlight {
-    color: @color3;
+#custom-swaync {
+    color: @color4;
+    border-bottom: 2px solid @color4;
+}
+
+#tray {
+    color: @color7;
+}
+
+@keyframes blink {
+    to {
+        background-color: @color1;
+        color: @foreground;
+    }
 }

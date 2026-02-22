@@ -1,0 +1,13 @@
+@define-color background #000000;
+@define-color foreground #ffffff;
+@define-color select     #ffffff;
+
+@define-color pink       #ffffff;
+@define-color purple     #ffffff;
+@define-color red        #ffffff;
+@define-color orange     #ffffff;
+@define-color yellow     #ffffff;
+@define-color green      #ffffff;
+@define-color blue       #ffffff;
+@define-color gray       #ffffff;
+

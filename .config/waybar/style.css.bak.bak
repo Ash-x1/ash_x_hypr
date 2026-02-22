@@ -1,0 +1,139 @@
+@import "/home/ash/.cache/wal/colors-waybar.css";
+
+@define-color pywal-module-bg alpha(@color0, 0.7);
+@define-color pywal-border alpha(@color4, 0.8);
+@define-color pywal-text @color7;
+
+* {
+    border: none;
+    min-height: 0;
+    font-family:
+        "SF Pro Text", "Noto Sans Arabic", "Noto Sans", "Noto Sans CJK JP",
+        "JetBrainsMono Nerd Font", sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: -0.5px;
+    padding: 0px;
+    margin: 0px;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+tooltip {
+    background-color: @color0;
+    color: @color7;
+    border: 2px solid @color4;
+    border-radius: 8px;
+}
+
+#clock,
+#custom-swaync,
+#battery,
+#window,
+#workspaces,
+#custom-cava,
+#tray,
+#language,
+#pulseaudio,
+#backlight {
+    padding: 2px 10px;
+    border-radius: 14px;
+    margin: 4px 3px;
+    background-color: @pywal-module-bg;
+    color: @color7;
+    border: 2px solid @pywal-border;
+    transition: all 0.3s ease;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+#workspaces button {
+    box-shadow: none;
+    text-shadow: none;
+    padding: 3px 4px;
+    margin: 0 3px;
+    border-radius: 8px;
+    background-color: transparent;
+    color: @color4;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    background-color: @color4;
+    color: @color0;
+    min-width: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+    background-color: alpha(@color4, 0.12);
+    color: @color4;
+    border-radius: 16px;
+    min-width: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.urgent {
+    background-color: @color1;
+    color: @color0;
+    border-radius: 16px;
+    min-width: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+#custom-swaync {
+    color: @color1;
+}
+
+#battery.charging {
+    color: @color2;
+}
+
+#battery.warning:not(.charging) {
+    color: @color3;
+}
+
+#battery.critical:not(.charging) {
+    color: @color1;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: @color1;
+        color: @color0;
+    }
+}
+
+#custom-cava {
+    color: @color5;
+}
+
+#pulseaudio {
+    color: @color5;
+}
+
+#window {
+    color: @color6;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    min-height: 24px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    transition: none;
+}
+
+#backlight {
+    color: @color3;
+}
