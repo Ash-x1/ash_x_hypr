@@ -42,7 +42,8 @@
         {
 	    "type": "packages",
             "key": " ",
-            "format": "pacman: {pacman} flatpak: {flatpak-all}"
+            "format": "pacman: {pacman} flatpak: {flatpak-all}",
+	    "keyColor": "33"
         },
         {
             "type": "shell",

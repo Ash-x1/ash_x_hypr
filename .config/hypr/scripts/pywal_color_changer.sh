@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #choose wallpaper using swww
-swww img "$1"
+awww img "$1"
 
 # set new colors in pywal
 wal -i "$1" --backend wal

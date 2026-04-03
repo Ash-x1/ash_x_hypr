@@ -1,0 +1,154 @@
+@import "~/.config/rofi/matugen-colors.rasi"
+
+* {
+    background-alt: @surface_container;
+    color1: @primary;
+    color4: @primary;
+    color5: @secondary;
+    color9: @error;
+}
+
+configuration {
+    modi: "window,run,drun";
+    display-drun: "Applications";
+    display-window: "Windows";
+    display-run: "Run";
+    drun-display-format: "{icon} {name}";
+    font: "JetBrainsMono Nerd Font Medium 15";
+    show-icons: true;
+}
+
+window {
+    transparency: "real";
+    location: center;
+    anchor: center;
+    fullscreen: false;
+    width: 1000px;
+    height : 600px;
+    border: 2px solid;
+    border-color: @primary;
+    border-radius: 15px;
+    background-color: @surface;
+}
+
+mainbox {
+    spacing: 0px;
+    background-color: transparent;
+    orientation: horizontal;
+    children: [ "imagebox", "listbox" ];
+}
+
+imagebox {
+    padding: 20px;
+    border-radius: 15px;
+    background-color: transparent;
+    background-image: url("~/.config/rofi/current_rofi_wall/current_rofi_wallpaper", height);
+    background-size: vertical;
+    orientation: vertical;
+    children: [ "inputbar", "dummy", "mode-switcher" ];
+}
+
+listbox {
+    spacing: 20px;
+    padding: 20px;
+    background-color: transparent;
+    orientation: vertical;
+    children: [ "message", "listview" ];
+}
+
+inputbar {
+    spacing: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: @surface_container;
+    text-color: @on_surface;
+    children: [ "textbox-prompt-colon", "entry" ];
+}
+
+textbox-prompt-colon {
+    str: "  ";
+    background-color: inherit;
+    text-color: inherit;
+}
+
+entry {
+    background-color: inherit;
+    text-color: inherit;
+    cursor: text;
+    placeholder: "Search";
+    placeholder-color: @on_surface_variant;
+}
+
+mode-switcher {
+    spacing: 20px;
+    background-color: transparent;
+    text-color: @secondary;
+}
+
+button {
+    padding: 15px;
+    border-radius: 10px;
+    background-color: @surface_container;
+    text-color: @on_surface;
+}
+
+button selected {
+    background-color: @primary;
+    text-color: @on_primary;
+}
+
+listview {
+    columns: 1;
+    lines: 8;
+    spacing: 10px;
+    background-color: transparent;
+    text-color: @on_surface;
+}
+
+element {
+    spacing: 15px;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: transparent;
+    text-color: @on_surface;
+}
+
+element normal.urgent {
+    background-color: @error;
+    text-color: @on_error;
+}
+
+element normal.active {
+    background-color: @secondary_container;
+    text-color: @on_secondary_container;
+}
+
+element selected.normal {
+    background-color: @primary;
+    text-color: @on_primary;
+}
+
+element selected.urgent {
+    background-color: @error;
+    text-color: @on_error;
+}
+
+element selected.active {
+    background-color: @secondary;
+    text-color: @on_secondary;
+}
+
+textbox {
+    padding: 15px;
+    border-radius: 10px;
+    background-color: @surface_container;
+    text-color: @on_surface;
+}
+
+error-message {
+    padding: 15px;
+    border-radius: 20px;
+    background-color: @error_container;
+    text-color: @on_error_container;
+}
+

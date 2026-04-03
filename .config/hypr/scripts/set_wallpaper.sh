@@ -33,7 +33,7 @@ if [ -n "$chosen" ]; then
     selected_wallpaper="$WALLPAPER_DIR/$chosen"
 
     # 1. Change the wallpaper
-    swww img "$selected_wallpaper" --transition-type random --transition-duration 3 --transition-fps 60
+    awww img "$selected_wallpaper" --transition-type random --transition-duration 3 --transition-fps 60
 
     # 2. Apply pywal theme
     wal -i "$selected_wallpaper" --backend wal
